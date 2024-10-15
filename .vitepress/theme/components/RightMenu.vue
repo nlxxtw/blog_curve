@@ -227,20 +227,14 @@
 import { storeToRefs } from "pinia";
 import { mainStore } from "@/store";
 import { smoothScrolling, shufflePost, copyText, copyImage, downloadImage } from "@/utils/helper";
+import { onMounted } from "vue";
 import images from "../../../public/bg.json";
 
 const router = useRouter();
 const store = mainStore();
 const { theme } = useData();
-const {
-  useRightMenu,
-  themeType,
-  playerShow,
-  playerVolume,
-  playState,
-  playerData,
-  backgroundUrl,
-} = storeToRefs(store);
+const { useRightMenu, themeType, playerShow, playerVolume, playState, playerData, backgroundUrl } =
+  storeToRefs(store);
 
 // 右键菜单数据
 const rightMenuX = ref(0);
@@ -350,7 +344,6 @@ function preloadImages() {
   img1.src = images[currentIndex];
   preloadedImages.push(img1);
 }
-preloadImages();
 // 右键菜单点击事件
 const rightMenuFunc = async (type) => {
   try {
@@ -452,6 +445,9 @@ const commentCopyClose = () => {
   if (typeof $comment !== "undefined") $comment.reload();
 };
 
+onMounted(() => {
+  preloadImages();
+});
 defineExpose({ openRightMenu });
 </script>
 
@@ -602,9 +598,10 @@ defineExpose({ openRightMenu });
 }
 @font-face {
   font-family: "iconfont"; /* Project id 4711559 */
-  src: url('//at.alicdn.com/t/c/font_4711559_z4q5tf2zru.woff2?t=1728966202656') format('woff2'),
-       url('//at.alicdn.com/t/c/font_4711559_z4q5tf2zru.woff?t=1728966202656') format('woff'),
-       url('//at.alicdn.com/t/c/font_4711559_z4q5tf2zru.ttf?t=1728966202656') format('truetype');
+  src:
+    url("//at.alicdn.com/t/c/font_4711559_z4q5tf2zru.woff2?t=1728966202656") format("woff2"),
+    url("//at.alicdn.com/t/c/font_4711559_z4q5tf2zru.woff?t=1728966202656") format("woff"),
+    url("//at.alicdn.com/t/c/font_4711559_z4q5tf2zru.ttf?t=1728966202656") format("truetype");
 }
 
 .iconfont {
