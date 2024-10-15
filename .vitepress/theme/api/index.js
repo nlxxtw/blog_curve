@@ -1,4 +1,3 @@
-import 'https://cdn.jsdelivr.net/npm/@xizeyoupan/meting@latest/dist/Meting.min.js'
 /**
  * 获取一言
  * @param {string} [rule="updated"] - 文章的排序规则，可以是 "created" 或 "updated"
