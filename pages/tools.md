@@ -6,7 +6,7 @@ aside: false
 <script setup>
 import Banner from "@/components/Banner.vue";
 import LinkList from "@/components/List/LinkList.vue";
-import toolsData from "@/assets/toolsData.mjs";
+// import toolsData from "@/assets/toolsData.mjs";
 </script>
 
 <Banner
