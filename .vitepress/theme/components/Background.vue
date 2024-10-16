@@ -2,7 +2,7 @@
   <Teleport to="body">
     <!-- 站点背景 -->
     <div v-if="backgroundType !== 'close'" :class="['background', backgroundType, themeValue]">
-      <canvas id="universe"></canvas>
+      <canvas ref="universe" id="universe"></canvas>
       <img
         ref="img1"
         v-if="backgroundType === 'image'"
@@ -156,13 +156,14 @@ function dark() {
   }
   animate();
 }
+const universe = ref(null)
 onMounted(() => {
-  if(document.getElementById("universe")){
+  if(universe.value !== null){
     dark()
   }
 });
 onUpdated(() => {
-  if(document.getElementById("universe")){
+  if(universe.value !== null){
     dark()
   }
 });
@@ -209,6 +210,7 @@ watch(backgroundUrl, (newUrl, oldUrl) => {
   .cover {
     width: 100%;
     height: auto;
+    object-fit: cover;
     min-height: 100%;
     opacity: 0;
     position: fixed;

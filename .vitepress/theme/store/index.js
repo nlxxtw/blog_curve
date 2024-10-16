@@ -51,7 +51,7 @@ export const mainStore = defineStore("main", {
       lastScrollY: 0,
       // 站点背景
       backgroundType: "patterns",
-      backgroundUrl: "https://tuapi.eees.cc/api.php?category={dongman,fengjing}&type=302",
+      backgroundUrl: "https://fastly.jsdelivr.net/gh/PuppetRuler/drawing-board@main/images/1724778936500large_Ren_01d.png",
     };
   },
   getters: {},
