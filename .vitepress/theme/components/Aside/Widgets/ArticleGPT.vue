@@ -27,15 +27,18 @@
 </template>
 
 <script setup>
-import { storeToRefs } from "pinia";
-import { mainStore } from "@/store";
-const store = mainStore();
-const { mobileMenuShow } = storeToRefs(store);
 const { frontmatter } = useData();
 const router = useRouter();
 
 // 手机适配
-const isMobile = mobileMenuShow;
+let isMobile = false;
+try {
+  if (window) {
+    isMobile = window.innerWidth <= 768 ? true : false;
+  }
+} catch (error) {
+  console.log(error);
+}
 
 // 摘要数据
 const loading = ref(true);

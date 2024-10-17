@@ -31,13 +31,9 @@
 import { storeToRefs } from "pinia";
 import { mainStore } from "@/store";
 import { onMounted, watch, ref } from "vue";
+import { value } from "lodash-es";
 const store = mainStore();
-const { backgroundType, backgroundUrl, themeValue, mobileMenuShow } = storeToRefs(store);
-let backgroundUrl1 = ref();
-backgroundUrl1.value = mobileMenuShow
-  ? "https://fastly.jsdelivr.net/gh/PuppetRuler/drawing-board@main/images/1726620907142bg.jpg"
-  : backgroundUrl.value;
-let backgroundUrl2 = ref();
+const { backgroundType, backgroundUrl, themeValue } = storeToRefs(store);
 
 // 加载失败
 const coverError = (e) => {
@@ -178,6 +174,18 @@ onUpdated(() => {
 // 更换图片
 const img1 = ref();
 const img2 = ref();
+let backgroundUrl1 = ref(backgroundUrl.value);
+try {
+  if (window) {
+    backgroundUrl1.value =
+      window.innerWidth <= 768
+        ? "https://fastly.jsdelivr.net/gh/PuppetRuler/drawing-board@main/images/1726620907142bg.jpg"
+        : backgroundUrl.value;
+  }
+} catch (error) {
+  console.log(error);
+}
+let backgroundUrl2 = ref();
 watch(backgroundUrl, (newUrl, oldUrl) => {
   changeImg = true;
   if (img2.value.classList.contains("hidden")) {
