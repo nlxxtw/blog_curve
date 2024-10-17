@@ -249,3 +249,9 @@ div.iframe {
     height: 100%
   }
 }
+
+// 移动端点击处理
+*{
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+}
