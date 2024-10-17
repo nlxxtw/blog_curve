@@ -1,6 +1,6 @@
 <!-- AI 摘要（假） -->
 <template>
-  <div v-if="frontmatter.articleGPT && !isMobile" class="article-gpt s-card">
+  <div v-if="frontmatter.articleGPT" class="article-gpt s-card">
     <div class="title">
       <span class="name" @click="router.go('/posts/2024/0218')">
         <i class="iconfont icon-robot"></i>
@@ -29,16 +29,6 @@
 <script setup>
 const { frontmatter } = useData();
 const router = useRouter();
-
-// 手机适配
-let isMobile = false;
-try {
-  if (window) {
-    isMobile = window.innerWidth <= 768 ? true : false;
-  }
-} catch (error) {
-  console.log(error);
-}
 
 // 摘要数据
 const loading = ref(true);

@@ -244,7 +244,7 @@ watch(backgroundUrl, (newUrl, oldUrl) => {
   }
   &::after {
     content: "";
-    background: radial-gradient(ellipse, rgba(20, 20, 20, 0.65) 50%, rgba(20, 20, 20, 0) 150%);
+    background: radial-gradient(ellipse, rgba(20, 20, 20, 0.6) 50%, rgba(20, 20, 20, 0) 150%);
     position: absolute;
     top: 0;
     left: 0;
