@@ -27,8 +27,15 @@
 </template>
 
 <script setup>
+import { storeToRefs } from "pinia";
+import { mainStore } from "@/store";
+const store = mainStore();
+const { mobileMenuShow } = storeToRefs(store);
 const { frontmatter } = useData();
 const router = useRouter();
+
+// 手机适配
+const isMobile = mobileMenuShow;
 
 // 摘要数据
 const loading = ref(true);
@@ -87,13 +94,8 @@ const showOther = () => {
   }
 };
 
-let isMobile = false;
 onMounted(() => {
   if (frontmatter.value.articleGPT) initAbstract();
-  // 手机适配
-  if(window){
-    isMobile = window.innerWidth <= 768 ? true : false;
-  }
 });
 
 onBeforeUnmount(() => {
