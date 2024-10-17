@@ -30,9 +30,6 @@
 const { frontmatter } = useData();
 const router = useRouter();
 
-// 手机适配
-const isMobile = window.innerWidth <= 768 ? true : false;
-
 // 摘要数据
 const loading = ref(true);
 const waitTimeOut = ref(null);
@@ -92,6 +89,8 @@ const showOther = () => {
 
 onMounted(() => {
   if (frontmatter.value.articleGPT) initAbstract();
+  // 手机适配
+  const isMobile = window.innerWidth <= 768 ? true : false;
 });
 
 onBeforeUnmount(() => {
