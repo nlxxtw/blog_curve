@@ -242,15 +242,17 @@ watch(backgroundUrl, (newUrl, oldUrl) => {
       opacity: 1;
     }
   }
-  &::after {
-    content: "";
-    background: radial-gradient(ellipse, rgba(20, 20, 20, 0.6) 50%, rgba(20, 20, 20, 0) 150%);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
+  &:has(.cover) {
+    &::after {
+      content: "";
+      background: radial-gradient(ellipse, rgba(20, 20, 20, 0.6) 50%, rgba(20, 20, 20, 0) 150%);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+    }
   }
   .hidden {
     opacity: 0 !important;
