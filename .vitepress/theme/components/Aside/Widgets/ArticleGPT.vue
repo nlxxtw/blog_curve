@@ -87,10 +87,13 @@ const showOther = () => {
   }
 };
 
+let isMobile = false;
 onMounted(() => {
   if (frontmatter.value.articleGPT) initAbstract();
   // 手机适配
-  const isMobile = window.innerWidth <= 768 ? true : false;
+  if(window){
+    isMobile = window.innerWidth <= 768 ? true : false;
+  }
 });
 
 onBeforeUnmount(() => {
