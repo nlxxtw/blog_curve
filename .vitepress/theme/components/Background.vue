@@ -227,8 +227,9 @@ watch(backgroundUrl, (newUrl, oldUrl) => {
     }
   }
   .cover {
-    width: 100vw;
-    height: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     min-height: 100%;
     opacity: 0;
     position: fixed;
