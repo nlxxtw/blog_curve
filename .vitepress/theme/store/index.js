@@ -51,7 +51,7 @@ export const mainStore = defineStore("main", {
       lastScrollY: 0,
       // 站点背景
       backgroundType: "patterns",
-      backgroundUrl: '../../../public/bg.jpg',
+      backgroundUrl: 'https://fastly.jsdelivr.net/gh/PuppetRuler/drawing-board@main/images/1729228350347bg.jpg',
     };
   },
   getters: {},

@@ -31,7 +31,6 @@
 import { storeToRefs } from "pinia";
 import { mainStore } from "@/store";
 import { onMounted, watch, ref } from "vue";
-import { value } from "lodash-es";
 const store = mainStore();
 const { backgroundType, backgroundUrl, themeValue } = storeToRefs(store);
 
