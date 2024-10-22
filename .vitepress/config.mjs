@@ -172,22 +172,22 @@ export default withPwa(
         background_color: "#efefef",
         icons: [
           {
-            src: "/images/favicon.webp",
+            src: "/favicon.webp",
             sizes: "32x32",
             type: "image/webp",
           },
           {
-            src: "/images/favicon.webp",
+            src: "/favicon.webp",
             sizes: "96x96",
             type: "image/webp",
           },
           {
-            src: "/images/favicon.webp",
+            src: "/favicon.webp",
             sizes: "256x256",
             type: "image/webp",
           },
           {
-            src: "/images/favicon.webp",
+            src: "/favicon.webp",
             sizes: "512x512",
             type: "image/webp",
           },
