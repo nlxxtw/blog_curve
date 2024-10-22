@@ -52,17 +52,8 @@ export const getSiteInfo = async (url) => {
  * @param {type} string - 类型
  * @returns {Promise<Object>} - 音乐详情
  */
-export const getMusicList = async (id, server = "netease", type = "playlist") => {
-  const result = await fetch(
-    //我的(能有免费的netease)
-    // `https://metingjsapi.vercel.app/api?server=${server}&type=${type}&id=${id}`,
-    // 官方(仅netease)
-    // `http://localhost:3000/api?server=${server}&type=${type}&id=${id}`,
-    // anzhiyu接口(能用qq)
-    // `https://meting.qjqq.cn/?server=${server}&type=${type}&id=${id}`,
-    // 圆弧派接口(netease 有VIP)
-    `https://v.iarc.top/?server=${server}&type=${type}&id=${id}`,
-  );
+export const getMusicList = async (url, id, server = "netease", type = "playlist") => {
+  const result = await fetch(`${url}/?server=${server}&type=${type}&id=${id}`);
   const list = await result.json();
   return list.map((song) => {
     const { pic, ...data } = song;

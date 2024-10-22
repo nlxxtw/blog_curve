@@ -298,13 +298,24 @@ export const themeConfig = {
   },
   // 评论
   comment: {
-    enable: false,
+    enable: true,
     // 评论系统选择
-    type: "artalk",
+    // artalk / twikoo
+    type: "twikoo",
     // 评论系统配置
     artalk: {
       site: "",
       server: "",
+    },
+    // twikoo
+    // https://twikoo.js.org/
+    twikoo: {
+      // 必填，若不想使用 CDN，可以使用 pnpm add twikoo 安装并引入
+      js: "https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/twikoo/1.6.39/twikoo.all.min.js",
+      envId: "https://blog-curve.vercel.app/",
+      // 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
+      // region: "ap-shanghai",
+      lang: "zh-CN",
     },
   },
   // 侧边栏
@@ -312,6 +323,7 @@ export const themeConfig = {
     // 站点简介
     hello: {
       enable: true,
+      text: "这里有关于<strong>开发</strong>相关的问题和看法，也会有一些<strong>奇技淫巧</strong>的分享，其中大部分内容会侧重于<strong>前端开发</strong>。希望你可以在这里找到对你有用的知识和教程。",
     },
     // 目录
     toc: {
@@ -349,6 +361,13 @@ export const themeConfig = {
   // 音乐播放器
   music: {
     enable: true,
+    /* 
+      我的接口(能有免费的netease):https://metingjsapi.vercel.app/api?server=${server}&type=${type}&id=${id}
+      官方(仅netease):https://api-meting.example.com/?server=${server}&type=${type}&id=${id}
+      anzhiyu接口(能用qq):https://meting.qjqq.cn/?server=${server}&type=${type}&id=${id}
+      圆弧派接口(netease 有VIP):https://v.iarc.top/?server=${server}&type=${type}&id=${id}
+    */
+    url: "https://v.iarc.top",
     // id
     id: 7387315194,
     // netease / tencent / kugou
