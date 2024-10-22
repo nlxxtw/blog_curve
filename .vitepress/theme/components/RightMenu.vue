@@ -368,7 +368,7 @@ const rightMenuFunc = async (type) => {
         preloadImages(); // 预加载下一个背景图
         break;
       case "copy-link":
-        const pageLink = theme.value.site + router.route.path;
+        const pageLink = theme.value.siteMeta.site + router.route.path;
         if (pageLink) copyText(pageLink);
         break;
       case "input-paste":
