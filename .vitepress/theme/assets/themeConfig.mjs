@@ -311,7 +311,7 @@ export const themeConfig = {
     // https://twikoo.js.org/
     twikoo: {
       // 必填，若不想使用 CDN，可以使用 pnpm add twikoo 安装并引入
-      js: "https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/twikoo/1.6.39/twikoo.all.min.js",
+      js: "https://cdn.jsdelivr.net/npm/@docsearch/js@3",
       envId: "https://blog-curve.vercel.app/",
       // 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
       // region: "ap-shanghai",
@@ -379,8 +379,8 @@ export const themeConfig = {
   // https://www.algolia.com/
   search: {
     enable: true,
-    appId: "XOCTUND3C3",
-    apiKey: "60fff860dc8509b75e44f6d0c5439b74",
+    appId: "PBMFCJ9NA5",
+    apiKey: "da8add3d023c6fb18e26b5a15dacace4",
   },
   // 打赏
   rewardData: {
